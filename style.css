@@ -78,7 +78,7 @@ span {
   color: var(--text-color);
   margin-left: 4rem;
   font-weight: 500;
-  transition: 0.3 ease-in-out;
+  transition: 0.3s ease-in-out;
   border-bottom: 3px solid transparent;
 }
 .navbar a:hover {
