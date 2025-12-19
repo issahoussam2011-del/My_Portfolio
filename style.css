@@ -56,7 +56,7 @@ header {
   width: 100%;
   top: 0;
   left: 0;
-  padding: 4rem 15%;
+  padding: 3.3rem 15%;
   background-color: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(10px);
   display: flex;
@@ -109,9 +109,12 @@ span {
   border: none;
   text-wrap: nowrap;
   font-weight: 600;
+  transition: 0.3s ease-in-out;
 }
 .gradient-btn:hover {
   scale: 1.05;
+  box-shadow: 0 0 10px rgb(235, 95, 13), 0 0 13px rgb(235, 95, 13),
+    0 0 16px rgb(235, 95, 13);
 }
 section {
   height: 100vh;
@@ -139,7 +142,7 @@ section {
   font-size: 4rem;
 }
 .home-content p {
-  font-size: 1.5rem;
+  font-size: 1.76rem;
   line-height: 1.8;
 }
 .home-img {
@@ -204,4 +207,33 @@ section {
   color: black;
   box-shadow: 0 0 25px var(--main-color);
   background-color: var(--main-color);
+}
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: ceneter;
+  gap: 10rem;
+  background: var(--second-bg-color);
+}
+.about-img img {
+  border-radius: 50%;
+  box-shadow: 0 0 25px rgb(36, 56, 91);
+  transition: 0.4s ease-in-out;
+  width: 36vw;
+}
+.about-img img:hover {
+  box-shadow: 0 0 25px rgb(36, 56, 91), 0 0 50px rgb(36, 56, 91),
+    0 0 80px rgb(36, 56, 91);
+}
+.about-content h2 {
+  font-size: 7rem;
+}
+.about-content p {
+  font-size: 1.76rem;
+  line-height: 1.6;
+  padding-bottom: 30px;
+}
+.about-content {
+  display: flex;
+  flex-direction: column;
 }
