@@ -100,3 +100,7 @@ span {
 .gradient-btn:hover {
   scale: 1.05;
 }
+section {
+  min-height: 100dvh;
+  padding: 18rem 15%;
+}
