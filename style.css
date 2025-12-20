@@ -42,6 +42,7 @@
   --second-bg-color: #101010;
   --text-color: white;
   --main-color: #ea580c;
+  --scrollbar-thumb-color: #ea5a0c8a;
 }
 html {
   font-size: 60%;
@@ -133,7 +134,7 @@ section {
   padding-top: 1.5rem;
 }
 .home-content h1 {
-  font-size: 8rem;
+  font-size: 7.5rem;
   font-weight: 700;
   margin-top: 1.8rem;
 }
@@ -236,4 +237,39 @@ section {
 .about-content {
   display: flex;
   flex-direction: column;
+}
+.blue {
+  color: rgb(88, 222, 243);
+  font-weight: 400;
+}
+::-webkit-scrollbar {
+  width: 13px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb-color);
+  border-radius: 6.5px;
+}
+::-webkit-scrollbar-track {
+  background-color: var(--bg-color);
+}
+.heading {
+  text-align: center;
+  font-size: 7rem;
+  margin: 5rem 0;
+}
+.services {
+  background-color: var(--bg-color);
+}
+.services h2 {
+  color: var(--text-color);
+}
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(3000px, 1fr));
+  align-items: center;
+  gap: 2.5rem;
+}
+.services-box {
+  display: flex;
+  justify-content: center;
 }
