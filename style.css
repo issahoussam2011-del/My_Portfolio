@@ -119,6 +119,7 @@ span {
 }
 section {
   height: 100vh;
+  width: 100vw;
   padding: 18rem 15%;
 }
 .home {
@@ -139,12 +140,12 @@ section {
   margin-top: 1.8rem;
 }
 .home-content h3 {
-  margin: 1.5rem 0;
+  margin: 0 0 1.5rem 0;
   font-size: 4rem;
 }
 .home-content p {
   font-size: 1.76rem;
-  line-height: 1.8;
+  line-height: 1.6;
 }
 .home-img {
   margin-top: 1.4rem;
