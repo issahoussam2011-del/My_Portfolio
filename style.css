@@ -213,7 +213,7 @@ section {
 .about {
   display: flex;
   justify-content: center;
-  align-items: ceneter;
+  align-items: center;
   gap: 10rem;
   background: var(--second-bg-color);
 }
@@ -250,27 +250,63 @@ section {
   background-color: var(--scrollbar-thumb-color);
   border-radius: 6.5px;
 }
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--main-color);
+}
 ::-webkit-scrollbar-track {
   background-color: var(--bg-color);
 }
 .heading {
   text-align: center;
   font-size: 7rem;
-  margin: 5rem 0;
+  padding-bottom: 7rem;
 }
 .services {
   background-color: var(--bg-color);
 }
-.services h2 {
-  color: var(--text-color);
-}
 .services-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(3000px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   align-items: center;
-  gap: 2.5rem;
+  gap: 3rem;
+  padding-bottom: 7rem;
 }
-.services-box {
+.service-box {
   display: flex;
   justify-content: center;
+  align-items: center;
+  background-color: var(--main-color);
+  color: black;
+  height: 600px;
+  border-radius: 3rem;
+  cursor: pointer;
+  border: 5px solid transparent;
+  transition: 0.3s ease-in-out;
+}
+.service-box:hover {
+  background-color: var(--second-bg-color);
+  border: 5px solid var(--main-color);
+  color: var(--main-color);
+  transform: scale(1.05);
+}
+.service-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 5rem;
+}
+.service-info h4 {
+  font-size: 4rem;
+  font-weight: 600;
+  margin: 2rem 0;
+}
+.service-info p {
+  font-size: 1.7rem;
+  font-weight: 400;
+  line-height: 1.7;
+}
+.service-info i {
+  font-size: 8rem;
 }
