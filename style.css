@@ -349,6 +349,7 @@ section {
   cursor: pointer;
   box-shadow: 0 0 5px var(--main-color);
   transition: 0.3s ease;
+  height: 65vh;
 }
 .project-card:hover {
   box-shadow: 0 0 25px var(--main-color), 0 0 50px var(--main-color);
@@ -361,5 +362,90 @@ section {
   font-size: 3rem;
 }
 .project-card p {
+  font-size: 1.6rem;
+}
+.contact {
+  background-color: var(--bg-color);
+  padding: 12rem 15%;
+}
+.contact h2 {
+  margin-bottom: 3rem;
+  color: var(--text-color);
+}
+.contact form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  margin: 5rem 0;
+  text-align: center;
+}
+.contact form .input-box input,
+.contact form textarea {
+  width: 100%;
+  padding: 2.5rem;
+  font-size: 1.8rem;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  border-radius: 2rem;
+  border: solid 2px var(--main-color);
+  margin: 1.5rem 0;
+  resize: none;
+  box-shadow: -4px 5px 12px 0px rgba(234, 88, 12, 0.38);
+  -webkit-box-shadow: -4px 5px 12px 0px rgba(234, 88, 12, 0.38);
+  -moz-box-shadow: -4px 5px 12px 0px rgba(234, 88, 12, 0.38);
+  transition: 0.3s ease-in-out;
+}
+.contact form .input-box input:focus,
+.contact form textarea:focus {
+  box-shadow: -8px 7px 15px 4px rgba(234, 88, 12, 0.38);
+  -webkit-box-shadow: -8px 7px 15px 4px rgba(234, 88, 12, 0.38);
+  -moz-box-shadow: -8px 7px 15px 4px rgba(234, 88, 12, 0.38);
+}
+.contact form .input-box input:hover,
+.contact form textarea:hover {
+  box-shadow: -8px 7px 15px 4px rgba(234, 88, 12, 0.38);
+  -webkit-box-shadow: -8px 7px 15px 4px rgba(234, 88, 12, 0.38);
+  -moz-box-shadow: -8px 7px 15px 4px rgba(234, 88, 12, 0.38);
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: none;
+}
+textarea {
+  margin-bottom: 5vh !important;
+}
+.footer {
+  background-color: var(--second-bg-color);
+  padding: 50px 0;
+}
+.footer .social-icons {
+  text-align: center;
+}
+.footer ul {
+  text-align: center;
+  font-size: 1.8rem;
+}
+.footer ul li {
+  display: inline-block;
+  margin-left: 20px;
+}
+.footer ul li a {
+  color: var(--text-color);
+  border-bottom: solid 3px transparent;
+  transition: 0.3s ease-in-out;
+}
+.footer ul li a:hover {
+  border-bottom: solid 3px var(--main-color);
+  color: var(--main-color);
+}
+.footer .copyright {
+  text-align: center;
+  margin-top: 40px;
   font-size: 1.6rem;
 }
