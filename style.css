@@ -118,8 +118,7 @@ span {
     0 0 16px rgb(235, 95, 13);
 }
 section {
-  height: 100vh;
-  width: 100vw;
+  min-height: 100vh;
   padding: 18rem 15%;
 }
 .home {
@@ -265,17 +264,17 @@ section {
 }
 .services {
   background-color: var(--bg-color);
-  min-height: max-content;
-  padding: 11rem 15%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  color: black;
+  padding-top: 11rem;
+}
+.services h2 {
+  color: white;
 }
 .services-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   align-items: center;
-  gap: 3rem;
+  gap: 2rem;
   margin-top: 7vh;
   max-height: 100%;
 }
@@ -284,8 +283,7 @@ section {
   justify-content: center;
   align-items: center;
   background-color: var(--main-color);
-  color: black;
-  height: 60vh;
+  height: 550px;
   border-radius: 3rem;
   cursor: pointer;
   border: 5px solid transparent;
@@ -295,7 +293,7 @@ section {
   background-color: var(--second-bg-color);
   border: 5px solid var(--main-color);
   color: var(--main-color);
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 .service-info {
   display: flex;
@@ -311,26 +309,21 @@ section {
   margin: 2rem 0;
 }
 .service-info p {
-  font-size: 1.7rem;
-  font-weight: 400;
+  font-size: 1.4rem;
+  font-weight: 600;
   line-height: 1.7;
 }
 .service-info i {
-  font-size: 6.3rem;
-}
-#figma {
-  font-size: 5rem;
+  font-size: 8rem;
 }
 .projects {
   background-color: var(--second-bg-color);
-  height: auto;
-  padding: 11rem 15%;
 }
 .projects-box {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   place-items: center;
-  gap: 5rem;
+  gap: 3rem;
   row-gap: 5rem;
   margin-top: 7vh;
 }
@@ -349,14 +342,15 @@ section {
   cursor: pointer;
   box-shadow: 0 0 5px var(--main-color);
   transition: 0.3s ease;
-  height: 65vh;
 }
 .project-card:hover {
   box-shadow: 0 0 25px var(--main-color), 0 0 50px var(--main-color);
+  transform: scale(1.02);
 }
 .project-card img {
   max-width: 300px;
   border-radius: 2em;
+  object-fit: cover;
 }
 .project-card h3 {
   font-size: 3rem;
@@ -420,6 +414,12 @@ input[type="number"] {
 textarea {
   margin-bottom: 5vh !important;
 }
+.send-btn {
+  font-weight: 600;
+}
+.send-btn:hover {
+  font-weight: 600 !important;
+}
 .footer {
   background-color: var(--second-bg-color);
   padding: 50px 0;
@@ -448,4 +448,76 @@ textarea {
   text-align: center;
   margin-top: 40px;
   font-size: 1.6rem;
+}
+@media (max-height: 810px) {
+  .service-box {
+    height: 450px;
+  }
+  .home-content {
+    margin-top: -50px;
+  }
+  .home-img {
+    margin-top: -50px;
+  }
+}
+@media (max-width: 1250px) {
+  #menu-icon {
+    display: block;
+  }
+  .navbar {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 50%;
+    padding: 1rem 3rem;
+    background: rgba(0, 0, 0, 0.8);
+    border-bottom-left-radius: 2rem;
+    border-left: solid 2px var(--main-color);
+    border-bottom: solid 2px var(--main-color);
+    display: none;
+  }
+  .navbar a {
+    display: block;
+    font-size: 2rem;
+    margin: 3rem 0;
+    color: var(--text-color);
+  }
+  .navbar.active {
+    display: block;
+  }
+  .no-display {
+    display: none;
+  }
+  .home {
+    flex-direction: column-reverse;
+    margin: 5rem 0;
+    gap: 5rem;
+  }
+  .home-content {
+    align-items: center;
+    text-align: center;
+  }
+  .home-img img {
+    width: 56vw;
+  }
+  .about {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+  .about h2 {
+    text-align: center;
+    margin: 2rem 0;
+  }
+  .about-img img {
+    width: 52vw;
+  }
+  .about .btn {
+    width: 180px;
+  }
+  .about-content {
+    align-items: center;
+  }
+  .contact form {
+    flex-direction: column;
+  }
 }
