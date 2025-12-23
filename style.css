@@ -357,6 +357,7 @@ section {
 }
 .project-card p {
   font-size: 1.6rem;
+  margin-bottom: 13px;
 }
 .contact {
   background-color: var(--bg-color);
@@ -450,17 +451,92 @@ textarea {
   font-size: 1.6rem;
 }
 @media (max-height: 810px) {
-  .service-box {
-    height: 450px;
-  }
   .home-content {
     margin-top: -50px;
   }
   .home-img {
     margin-top: -50px;
   }
+  .service-box {
+    height: 450px;
+  }
+  .projects h2 {
+    margin-top: -63px;
+  }
+}
+@media (orientation: portrait) {
+  .about-content p,
+  .about-content button {
+    font-size: 2rem;
+  }
+}
+@media (max-height: 860px) and (orientation: landscape) {
+  .project-card {
+    max-height: 480px;
+  }
+}
+@media (max-height: 1230px) and (orientation: portrait) {
+  .home-img img {
+    margin-top: -100px;
+  }
+  .home-content {
+    margin-top: -30px;
+  }
+  .about-img img {
+    margin-top: -40px;
+  }
+}
+@media (max-height: 1150px) and (orientation: portrait) {
+  .home {
+    flex-direction: column;
+  }
+  .home-img img {
+    max-width: 40vw;
+  }
+  .home-content h1 {
+    font-size: 6rem;
+  }
+  .home-content h3 {
+    font-size: 3.7rem;
+  }
+  .about-content {
+    margin-top: -123px;
+  }
+  .about-img img {
+    margin-top: -50px;
+  }
+  .form textarea {
+    margin-top: -10px !important;
+  }
+  .form .gradient-btn {
+    margin-top: -20px !important;
+  }
+}
+@media (max-width: 885px) {
+  .service-box {
+    width: 60vw;
+  }
+  .services-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .service-box p {
+    font-size: 2rem !important;
+  }
+  .service-box h4 {
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+  }
 }
 @media (max-width: 1250px) {
+  .btn {
+    font-size: 2.1rem;
+  }
+  .gradient-btn {
+    font-size: 2.1rem;
+  }
   #menu-icon {
     display: block;
   }
@@ -516,6 +592,15 @@ textarea {
   }
   .about-content {
     align-items: center;
+  }
+  .service-box p {
+    font-size: 1.7rem;
+  }
+  .project-card p {
+    font-size: 2rem;
+  }
+  .project-card h3 {
+    font-size: 4rem;
   }
   .contact form {
     flex-direction: column;
