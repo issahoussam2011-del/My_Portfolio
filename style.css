@@ -1,30 +1,30 @@
 @font-face {
-  font-family: "Poppins";
-  src: url("font/Poppins-Regular.ttf") format("truetype");
+  font-family: 'Poppins';
+  src: url('font/Poppins-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
-  font-family: "Poppins";
-  src: url("font/Poppins-Medium.ttf") format("truetype");
+  font-family: 'Poppins';
+  src: url('font/Poppins-Medium.ttf') format('truetype');
   font-weight: 500;
   font-style: normal;
 }
 @font-face {
-  font-family: "Poppins";
-  src: url("font/Poppins-SemiBold.ttf") format("truetype");
+  font-family: 'Poppins';
+  src: url('font/Poppins-SemiBold.ttf') format('truetype');
   font-weight: 600;
   font-style: normal;
 }
 @font-face {
-  font-family: "Poppins";
-  src: url("font/Poppins-Bold.ttf") format("truetype");
+  font-family: 'Poppins';
+  src: url('font/Poppins-Bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
-  font-family: "Poppins";
-  src: url("font/Poppins-ExtraBold.ttf") format("truetype");
+  font-family: 'Poppins';
+  src: url('font/Poppins-ExtraBold.ttf') format('truetype');
   font-weight: 800;
   font-style: normal;
 }
@@ -34,7 +34,7 @@
   box-sizing: border-box;
   text-decoration: none;
   scroll-behavior: smooth;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 400;
 }
 :root {
@@ -65,10 +65,12 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 100vw !important;
   z-index: 1000;
 }
 .menu-icon {
-  font-size: 3.5rem;
+  height: 3.5rem;
+  width: 3.5rem;
   color: var(--main-color);
   display: none;
 }
@@ -148,7 +150,6 @@ section {
   transition: 0.4s ease-in-out;
   width: 36vw;
 }
-
 .social-icons a {
   display: inline-flex;
   justify-content: center;
@@ -162,7 +163,19 @@ section {
   margin: 3rem 0.7rem;
   transition: 0.3s ease-in-out;
 }
-
+.icon {
+  width: 1em;
+  height: 1em;
+}
+.instagram-i-scale {
+  scale: 1.38;
+}
+.linkedin-i-scale {
+  scale: 1.3;
+}
+.github-i-scale {
+  scale: 1.2;
+}
 .btn-group {
   display: flex;
   gap: 3rem;
@@ -282,8 +295,10 @@ section {
   font-weight: 600;
   line-height: 1.7;
 }
-.service-info i {
-  font-size: 8rem;
+.service-info svg {
+  min-height: 58px;
+  height: 8rem;
+  width: 8rem;
 }
 .projects {
   background-color: var(--second-bg-color);
@@ -374,9 +389,17 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-input[type="number"] {
+input[type='number'] {
   -moz-appearance: textfield;
   appearance: none;
+}
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px var(--bg-color) inset !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+input:-moz-autofill {
+  box-shadow: 0 0 0px 1000px var(--bg-color) inset !important;
+  -moz-text-fill-color: #ffffff !important;
 }
 textarea {
   margin-bottom: 5vh !important;
@@ -417,9 +440,6 @@ textarea {
   }
   .home-img {
     margin-top: -50px;
-  }
-  .service-box {
-    height: 450px;
   }
   .projects h2 {
     margin-top: -63px;
@@ -648,8 +668,9 @@ textarea {
     width: 78vw;
     height: fit-content;
   }
-  .service-box i {
-    font-size: 9rem;
+  .service-box svg {
+    height: 9rem;
+    width: 9rem;
   }
   .service-box h4 {
     font-size: 3.6rem;
@@ -759,8 +780,9 @@ textarea {
   .service-box .service-info h4 {
     font-size: 2.7rem;
   }
-  .service-box .service-info i {
-    font-size: 5rem;
+  .service-box .service-info svg {
+    height: 5rem;
+    width: 5rem;
   }
   .service-box .service-info p {
     font-size: 1.5rem !important;
@@ -828,6 +850,13 @@ textarea {
     font-size: 1.3rem;
     padding-left: 20px;
     padding-right: 20px;
+  }
+}
+@media (max-width: 1250px) and (orientation: portrait) {
+  .menu-icon {
+    width: 7vw;
+    height: 7vw;
+    max-height: 42px;
   }
 }
 @media (hover: none) {
