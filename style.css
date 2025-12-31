@@ -391,7 +391,7 @@ input::-webkit-inner-spin-button {
 }
 input[type='number'] {
   -moz-appearance: textfield;
-  appearance: none;
+  appearance: textfield;
 }
 input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0px 1000px var(--bg-color) inset !important;
@@ -449,11 +449,6 @@ textarea {
   .about-content p,
   .about-content button {
     font-size: 2rem;
-  }
-}
-@media (max-height: 860px) and (orientation: landscape) {
-  .project-card {
-    max-height: 480px;
   }
 }
 @media (max-height: 1230px) and (orientation: portrait) {

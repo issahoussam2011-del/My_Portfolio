@@ -1,6 +1,6 @@
 const navBar = document.querySelector('.navbar');
 const menuIcon = document.querySelector('.menu-icon');
-const projects = document.querySelectorAll('.btn');
+const projectsBtn = document.querySelectorAll('.btn');
 const isNotDesctop = () => window.innerWidth <= 1250;
 const readMoreText = document.querySelectorAll('p')[1];
 const readMoreBtn = document.querySelector('#readMore');
@@ -8,15 +8,27 @@ const firstServiceBoxHeight = document.querySelectorAll('.service-box')[0].clien
 const scndAndThirdServiceBox = document.querySelectorAll('.service-box')[1, 2];
 const EmailMeBtn = document.querySelector('button');
 const form = document.querySelector('.form');
+const abtSec = document.querySelector('.about');
+const mqProjectBtn = window.matchMedia('(max-width: 323px)');
+const mqNotDesktop = window.matchMedia('(max-width: 1250px)');
+const abtPic = document.querySelector('.about-img img');
 
 //Prüft ob Bildschirm unter 324px breite hat und wechselt button-schrift von "My Projects" zu "Projekts" und andersrum.
-setInterval(function () {
-  if (window.innerWidth <= 323) {
-    projects[1].innerHTML = 'projects'
-  } else {
-    projects[1].innerHTML = 'My projects'
+if (mqProjectBtn.matches) {
+  projectsBtn[1].innerHTML = 'projects'
+}
+else {
+  projectsBtn[1].innerHTML = 'My projects'
+}
+
+mqProjectBtn.addEventListener('change', (e) => {
+  if (e.matches) {
+    projectsBtn[1].innerHTML = 'projects'
   }
-}, 5000)
+  else {
+    projectsBtn[1].innerHTML = 'My projects'
+  }
+})
 
 //schließt menü 350ms nach drücken eines Links im menü.
 document.querySelectorAll('.l').forEach(link => {
@@ -54,16 +66,26 @@ function openCloseMenu() {
 }
 
 //Read more button Funktion.
-function readMore() {
-  if (window.innerWidth <= 1250 && !readMoreText.classList.contains('read-more-active')) {
-    readMoreText.classList.add('read-more-active')
-    readMoreText.innerHTML += `<br>I am constantly <span class="blue">expanding my skill set</span> by learning <span class="blue">new technologies</span> and <span class="blue">adapting quickly</span> to evolving <span class="blue">project requirements</span>. <span class="blue">Collaboration</span> and <span class="blue">clear communication</span> are central to my workflow, enabling me to translate <span class="blue">ideas into practical</span>, <span class="blue">high-quality solutions</span>. I approach every project with <span class="blue">attention to detail</span>, a <span class="blue">problem-solving mindset</span>, and a strong commitment to delivering <span class="blue">reliable</span>, <span class="blue">scalable</span>, and <span class="blue">maintainable software</span>. I consistently follow <span class="blue">best practices</span>, allowing me to <span class="blue">maximize efficiency, ensure code quality, and drive project success</span>.`
-    readMoreBtn.innerHTML = 'Read Less'
-  }
-  else if (readMoreText.classList.contains('read-more-active')) {
-    readMoreBtn.innerHTML = 'Read More'
-    readMoreText.classList.remove('read-more-active')
-    readMoreText.innerHTML = `I am a dedicated <span class="blue">web developer</span> and software
+readMoreBtn.addEventListener('click', () => {
+  if (mqNotDesktop.matches) {
+    if (!readMoreText.classList.contains('read-more-active')) {
+      readMoreText.classList.add('read-more-active');
+      readMoreText.innerHTML += ` I am constantly <span class="blue">expanding my skill set</span>
+       by learning <span class="blue">new technologies</span> and <span class="blue">adapting quickly</span>
+       to evolving <span class="blue">project requirements</span>. <span class="blue">Collaboration</span>
+       and <span class="blue">clear communication</span> are central to my workflow, enabling me to translate 
+       <span class="blue">ideas into practical</span>, <span class="blue">high-quality solutions</span>.
+       I approach every project with <span class="blue">attention to detail</span>, a <span class="blue">
+       problem-solving mindset</span>, and a strong commitment to delivering <span class="blue">reliable</span>,
+       <span class="blue">scalable</span>, and <span class="blue">maintainable software</span>. I consistently follow
+       <span class="blue">best practices</span>, allowing me to <span class="blue">maximize efficiency,
+       ensure code quality, and drive project success</span>.`;
+      readMoreBtn.innerHTML = 'Read Less';
+    }
+    else {
+      readMoreBtn.innerHTML = 'Read More';
+      readMoreText.classList.remove('read-more-active');
+      readMoreText.innerHTML = ` I am a dedicated <span class="blue">web developer</span> and software
       engineer with extensive experience in modern digital solutions. My
       focus lies in developing <span class="blue">efficient</span>,
       <span class="blue">user-friendly</span>,
@@ -73,9 +95,53 @@ function readMore() {
       JavaScript) and <span class="blue">backend development</span>, I
       ensure that my projects are both technically
       <span class="blue">robust and visually compelling</span>. I value
-      clean code, performance optimization, and current web standards.`
+      clean code, performance optimization, and current web standards.`;
+    }
   }
-}
+  if (!mqNotDesktop.matches) {
+    if (!readMoreText.classList.contains('read-more-active')) {
+      readMoreText.classList.add('read-more-active');
+      readMoreText.style.columnCount = '2';
+      readMoreBtn.style.columnWidth = '50%';
+      readMoreText.style.fontSize = '1.5rem';
+      abtSec.style.padding = '18rem 10%';
+      document.querySelector('.about .about-content h2').style.textAlign = 'center';
+      abtPic.style.width = '28vw';
+      readMoreText.innerHTML += ` I am constantly <span class="blue">expanding my skill set</span>
+       by learning <span class="blue">new technologies</span> and <span class="blue">adapting quickly</span>
+       to evolving <span class="blue">project requirements</span>. <span class="blue">Collaboration</span>
+       and <span class="blue">clear communication</span> are central to my workflow, enabling me to translate 
+       <span class="blue">ideas into practical</span>, <span class="blue">high-quality solutions</span>.
+       I approach every project with <span class="blue">attention to detail</span>, a <span class="blue">
+       problem-solving mindset</span>, and a strong commitment to delivering <span class="blue">reliable</span>,
+       <span class="blue">scalable</span>, and <span class="blue">maintainable software</span>. I consistently follow
+       <span class="blue">best practices</span>, allowing me to <span class="blue">maximize efficiency,
+       ensure code quality, and drive project success</span>.`;
+      readMoreBtn.innerHTML = 'Read Less';
+    }
+    else {
+      readMoreText.style.columnCount = '1';
+      readMoreBtn.style.columnWidth = 'none';
+      readMoreText.style.fontSize = '1.76rem';
+      abtSec.style.padding = '18rem 15%';
+      document.querySelector('.about .about-content h2').style.textAlign = 'left';
+      abtPic.style.width = '36vw';
+      readMoreBtn.innerHTML = 'Read More';
+      readMoreText.classList.remove('read-more-active');
+      readMoreText.innerHTML = ` I am a dedicated <span class="blue">web developer</span> and software
+      engineer with extensive experience in modern digital solutions. My
+      focus lies in developing <span class="blue">efficient</span>,
+      <span class="blue">user-friendly</span>,
+      <span class="blue">and aesthetically</span>
+      pleasing websites and applications. With expertise in
+      <span class="blue">frontend technologies</span> (HTML, CSS,
+      JavaScript) and <span class="blue">backend development</span>, I
+      ensure that my projects are both technically
+      <span class="blue">robust and visually compelling</span>. I value
+      clean code, performance optimization, and current web standards.`;
+    }
+  }
+})
 
 //setzt min-height von 2 und 3 service-box fest
 if (window.innerWidth >= 866) {
